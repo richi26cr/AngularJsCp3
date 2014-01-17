@@ -1,0 +1,50 @@
+<html ng-app="personApp">
+<head>
+    <meta charset="utf-8">
+    <title>PersonList - Angular</title>
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <script src="lib/jquery/jquery-1.10.2.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-animate.js"></script>
+    <script src="lib/angular/angular-resource.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/controllers/PersonListCtrl.js"></script>
+</head>
+<body ng-controller="PersonListCtrl">
+
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+            <!--Sidebar content-->
+
+            Search: <input ng-model="query">
+            Sort by:
+            <select ng-model="orderProp">
+                <option value="name">Alphabetical</option>
+                <option value="age">Age</option>
+            </select>
+
+        </div>
+        <div class="span10">
+            <!--Body content-->
+
+            <ul class="persons">
+                <li ng-repeat="person in persons | filter:query | orderBy:orderProp">
+                    {{person.name}}
+                    <p>{{person.direction}}</p>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
