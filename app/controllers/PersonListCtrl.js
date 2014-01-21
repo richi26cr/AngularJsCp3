@@ -7,7 +7,7 @@
  */
 'use strict';
 
-personApp.controller('PersonListCtrl',['$scope','$http',
+personApp.controller('PersonListCtrl',
     function($scope, $http) {
         $http.get('persons/persons.json').success(function(data) {
             $scope.persons = data;
@@ -15,4 +15,4 @@ personApp.controller('PersonListCtrl',['$scope','$http',
 
         $scope.orderProp = 'age';
     }
-]);
+);
