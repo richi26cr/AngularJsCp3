@@ -11,7 +11,9 @@ personApp.controller('PersonListCtrl',
     function($scope, $http) {
         $http.get('persons/persons.json').success(function(data) {
             $scope.persons = data;
-        });
+        }).error(function(data){
+                alert("Error loading persons.json file");
+            });
 
         $scope.orderProp = 'age';
     }
