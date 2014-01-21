@@ -7,10 +7,4 @@
  */
 'use strict';
 
-var personApp = angular.module('personApp',[
-    'ngRoute'
-]);
-
-personApp.config(['$routeProvider',
-    function($routeProvider) {
-    }]);
+var personApp = angular.module('personApp',[]);
